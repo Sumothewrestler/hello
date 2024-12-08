@@ -41,8 +41,13 @@ load_dotenv()
 # Security and Configuration
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
+ALLOWED_HOSTS = [
+    'localhost', 
+    '127.0.0.1', 
+    'babyaccounts.onrender.com',
+    '.onrender.com'  # Allows all subdomains of onrender.com
+]
 # Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",
